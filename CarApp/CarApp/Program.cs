@@ -42,13 +42,10 @@ namespace CarApp
                 totalCost = fuelNeeded * dieselPrice;
             }
             Console.WriteLine($"Brændstoforbrug for {distance} km: {fuelNeeded} liter");
-
-            double originalMileage = mileage; // Gem den oprindelige kilometerstand
-            mileage += distance; // Opdater kilometerstanden
-
             Console.WriteLine("Brændstoftype: " + fuelType);
             Console.WriteLine("Km/l: " + kml);
-            Console.WriteLine("Oprindelig kilometerstand: " + (int)originalMileage);
+            Console.WriteLine("Oprindelig kilometerstand: " + (int)mileage);
+            mileage += distance; // Opdater kilometerstanden
             Console.WriteLine("Ny kilometerstand: " + (int)mileage);
             Console.WriteLine($"Brændstofomkostninger {totalCost:C}");
         }
