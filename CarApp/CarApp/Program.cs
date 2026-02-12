@@ -1,4 +1,6 @@
-﻿namespace CarApp
+﻿using System.Reflection;
+
+namespace CarApp
 {
     internal class Program
     {
@@ -24,7 +26,7 @@
             Console.Write("Indtast Km/l: ");
             int kml = Convert.ToInt32(Console.ReadLine());
             Console.Write("Kilometerstand: ");
-            int mileage = Convert.ToInt32(Console.ReadLine());
+            double mileage = double.Parse(Console.ReadLine());
             double gasPrice = 13.49; // Eksempel på benzinpris pr. liter
             double dieselPrice = 12.29; // Eksempel på dieselpris pr. liter
             Console.Write("Indtast distance: ");
@@ -40,7 +42,15 @@
                 totalCost = fuelNeeded * dieselPrice;
             }
             Console.WriteLine($"Brændstoforbrug for {distance} km: {fuelNeeded} liter");
-            Console.WriteLine($"Brændstofomkostninger for {distance} km: {totalCost:C}");
+
+            double originalMileage = mileage; // Gem den oprindelige kilometerstand
+            mileage += distance; // Opdater kilometerstanden
+
+            Console.WriteLine("Brændstoftype: " + fuelType);
+            Console.WriteLine("Km/l: " + kml);
+            Console.WriteLine("Oprindelig kilometerstand: " + (int)originalMileage);
+            Console.WriteLine("Ny kilometerstand: " + (int)mileage);
+            Console.WriteLine($"Brændstofomkostninger {totalCost:C}");
         }
     }
 }
