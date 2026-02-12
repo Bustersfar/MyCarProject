@@ -42,7 +42,7 @@ namespace CarApp
             Console.WriteLine(string.Format("Brændstofudgifterne for {0} km er {1:C}", distanceTraveled, tripCost)); // String format
 
             Console.WriteLine($"\n{"Bilmærke".PadRight(15)}|{"Model".PadRight(15)}|{"Årgang".PadRight(7)}|{"Kilometertal".PadLeft(12)}");
-            Console.WriteLine("----------------------------------------------------");
+            Console.WriteLine("".PadRight(52, '-')); // 52 bindestreger
             Console.WriteLine($"{carBrand.PadRight(15)}|{carModel,-15}|{(carManufactoredYear.ToString()).PadRight(7)}|{(carMileage.ToString()).PadLeft(7)} km"); //Stringpadding på forskellige måder
         }
     }
