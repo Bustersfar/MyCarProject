@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Henrik\\Datamatiker\\Projects\\MyCarProject\\CarApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BAAB33E8-E72D-47A0-B173-E9CB5EFB5934}|CarApp\\CarApp.csproj|c:\\users\\henrik\\datamatiker\\projects\\mycarproject\\carapp\\carapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BAAB33E8-E72D-47A0-B173-E9CB5EFB5934}|CarApp\\CarApp.csproj|solutionrelative:carapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{666E1D56-F21C-2DEF-624A-6C8713B49DEE}|CarApp\\CarApp.csproj|c:\\users\\henrik\\datamatiker\\projects\\mycarproject\\carapp\\carapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{666E1D56-F21C-2DEF-624A-6C8713B49DEE}|CarApp\\CarApp.csproj|solutionrelative:carapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -24,7 +24,7 @@
               "RelativeDocumentMoniker": "CarApp\\Program.cs",
               "ToolTip": "C:\\Users\\Henrik\\Datamatiker\\Projects\\MyCarProject\\CarApp\\CarApp\\Program.cs",
               "RelativeToolTip": "CarApp\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAgwCkAAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-12T09:36:38.425Z",
               "EditorCaption": ""
