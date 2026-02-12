@@ -31,23 +31,23 @@ namespace CarApp
             double dieselPrice = 12.29; // Eksempel på dieselpris pr. liter
             Console.Write("Indtast distance: ");
             double distance = double.Parse(Console.ReadLine());
-            double fuelNeeded = distance / kml; // Beregn brændstofbehovet
-            double totalCost = 0;
+            double fuelUsed = distance / kml; // Beregn brændstofbehovet
+            double tripCost = 0;
             if (fuelType == 'B' || fuelType == 'b')
             {
-                totalCost = fuelNeeded * gasPrice;
+                tripCost = fuelUsed * gasPrice;
             }
             else
             {
-                totalCost = fuelNeeded * dieselPrice;
+                tripCost = fuelUsed * dieselPrice;
             }
-            Console.WriteLine($"Brændstoforbrug for {distance} km: {fuelNeeded} liter");
-            Console.WriteLine("Brændstoftype: " + fuelType);
-            Console.WriteLine("Km/l: " + kml);
-            Console.WriteLine("Oprindelig kilometerstand: " + (int)mileage);
+            Console.WriteLine($"Brændstofforbrug for {distance} km: {fuelUsed} liter");
+            Console.WriteLine($"Brændstoftype: {fuelType}");
+            Console.WriteLine($"Km/l: {kml}");
+            Console.WriteLine($"Oprindelig kilometerstand: {(int)mileage}");
             mileage += distance; // Opdater kilometerstanden
-            Console.WriteLine("Ny kilometerstand: " + (int)mileage);
-            Console.WriteLine($"Brændstofomkostninger {totalCost:C}");
+            Console.WriteLine($"Ny kilometerstand: {(int)mileage}");
+            Console.WriteLine($"Brændstofomkostninger {tripCost:C}");
         }
     }
 }
