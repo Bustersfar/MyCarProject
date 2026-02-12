@@ -43,7 +43,7 @@ namespace CarApp
 
             Console.WriteLine($"\n{"Bilmærke".PadRight(15)}|{"Model".PadRight(15)}|{"Årgang".PadRight(7)}|{"Kilometertal".PadLeft(12)}");
             Console.WriteLine("----------------------------------------------------");
-            Console.WriteLine($"{carBrand.PadRight(15)}|{carModel.PadRight(15)}|{(carManufactoredYear.ToString()).PadRight(7)}|{(carMileage.ToString()).PadLeft(7)} km");
+            Console.WriteLine($"{carBrand.PadRight(15)}|{carModel,-15}|{(carManufactoredYear.ToString()).PadRight(7)}|{(carMileage.ToString()).PadLeft(7)} km"); //Stringpadding på forskellige måder
         }
     }
 }
