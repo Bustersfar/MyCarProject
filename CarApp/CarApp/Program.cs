@@ -6,34 +6,27 @@ namespace CarApp
     {
         static void Main(string[] args)
         {
-            /* Console.Write("Indtast bilmærke: ");
-            string brand = Console.ReadLine();
+            Console.Write("Indtast bilmærke: ");
+            string carBrand = Console.ReadLine();
             Console.Write("Indtast bilmodel: ");
-            string model = Console.ReadLine();
-            Console.Write("Indtast årgang: ");
-            int year = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Indtast geartype (A for automatisk, M for manuel: ");
-            char gearType = Console.ReadLine()[0];
-
-            Console.WriteLine("Bilmærke: " + brand);
-            Console.WriteLine("Bilmodel: " + model);
-            Console.WriteLine("Årgang: " + year);
-            Console.WriteLine("Gear: " + gearType);
-            Console.WriteLine($"\n{brand} {model} fra {year} har gear {gearType}."); */
-            
-            Console.Write("Indtast brændstoftype (D for diesel, B for benzin: ");
-            char fuelType = Console.ReadLine()[0];
-            Console.Write("Indtast Km/l: ");
-            int kml = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Kilometerstand: ");
-            double mileage = double.Parse(Console.ReadLine());
-            double gasPrice = 13.49; // Eksempel på benzinpris pr. liter
-            double dieselPrice = 12.29; // Eksempel på dieselpris pr. liter
-            Console.Write("Indtast distance: ");
-            double distance = double.Parse(Console.ReadLine());
-            double fuelUsed = distance / kml; // Beregn brændstofbehovet
+            string carModel = Console.ReadLine();
+            Console.Write("Indtast bilens årgang: ");
+            int carManufactoredYear = int.Parse(Console.ReadLine());
+            Console.Write("Indtast bilens geartype (A for automatisk, M for manuel): ");
+            char carGearType = Console.ReadLine()[0];
+            Console.Write("Indtast hvilken type brændstof bilen bruger (D for diesel, B for benzin): ");
+            char carFuelType = Console.ReadLine()[0];
+            Console.Write("Indtast hvor mange km bilen kører på en liter: ");
+            double carKmL = double.Parse(Console.ReadLine());
+            Console.Write("Indtast bilens kilometerstand: ");
+            int carMileage = int.Parse(Console.ReadLine());
+            double gasPrice = 13.49;
+            double dieselPrice = 12.29;
+            Console.Write("Indtast turens længde i km.: ");
+            double distanceTraveled = double.Parse(Console.ReadLine());
+            double fuelUsed = distanceTraveled / carKmL;
             double tripCost = 0;
-            if (fuelType == 'B' || fuelType == 'b')
+            if (carFuelType == 'B' || carFuelType == 'b')
             {
                 tripCost = fuelUsed * gasPrice;
             }
@@ -41,13 +34,16 @@ namespace CarApp
             {
                 tripCost = fuelUsed * dieselPrice;
             }
-            Console.WriteLine($"Brændstofforbrug for {distance} km: {fuelUsed} liter");
-            Console.WriteLine($"Brændstoftype: {fuelType}");
-            Console.WriteLine($"Km/l: {kml}");
-            Console.WriteLine($"Oprindelig kilometerstand: {(int)mileage}");
-            mileage += distance; // Opdater kilometerstanden
-            Console.WriteLine($"Ny kilometerstand: {(int)mileage}");
-            Console.WriteLine($"Brændstofomkostninger {tripCost:C}");
+            Console.WriteLine($"\nDin bil kører {carKmL} km på en liter {carFuelType}"); // String interpolation
+            Console.WriteLine($"Oprindelig kilometerstand: {carMileage}");
+            carMileage += (int)distanceTraveled; // Opdater kilometerstanden
+            Console.WriteLine($"Ny kilometerstand: {carMileage}");
+            // Console.WriteLine($"Brændstofomkostninger {tripCost:C}");
+            Console.WriteLine(string.Format("Brændstofudgifterne for {0} km er {1:C}", distanceTraveled, tripCost)); // String format
+
+            Console.WriteLine($"\n{"Bilmærke".PadRight(15)}|{"Model".PadRight(15)}|{"Årgang".PadRight(7)}|{"Kilometertal".PadLeft(12)}");
+            Console.WriteLine("----------------------------------------------------");
+            Console.WriteLine($"{carBrand.PadRight(15)}|{carModel.PadRight(15)}|{(carManufactoredYear.ToString()).PadRight(7)}|{(carMileage.ToString()).PadLeft(7)} km");
         }
     }
 }
