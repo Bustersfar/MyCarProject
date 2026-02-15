@@ -26,6 +26,7 @@ namespace CarApp
             double dieselPrice = 12.29;
             double fuelUsed = distanceTraveled / carKmL;
             double tripCost = 0;
+            // Her er en linie lavet i "Testing-branching
             if (carFuelType == 'B' || carFuelType == 'b')
             {
                 tripCost = fuelUsed * gasPrice;
