@@ -20,10 +20,10 @@ namespace CarApp
             double carKmL = double.Parse(Console.ReadLine());
             Console.Write("Indtast bilens kilometerstand: ");
             int carMileage = int.Parse(Console.ReadLine());
-            double gasPrice = 13.49;
-            double dieselPrice = 12.29;
             Console.Write("Indtast turens længde i km.: ");
             double distanceTraveled = double.Parse(Console.ReadLine());
+            double gasPrice = 13.49;
+            double dieselPrice = 12.29;
             double fuelUsed = distanceTraveled / carKmL;
             double tripCost = 0;
             if (carFuelType == 'B' || carFuelType == 'b')
@@ -36,14 +36,14 @@ namespace CarApp
             }
             Console.WriteLine($"\nDin bil kører {carKmL} km på en liter {carFuelType}"); // String interpolation
             Console.WriteLine($"Oprindelig kilometerstand: {carMileage}");
-            carMileage += (int)distanceTraveled; // Opdater kilometerstanden
-            Console.WriteLine($"Ny kilometerstand: {carMileage}");
-            // Console.WriteLine($"Brændstofomkostninger {tripCost:C}");
-            Console.WriteLine(string.Format("Brændstofudgifterne for {0} km er {1:C}", distanceTraveled, tripCost)); // String format
+            carMileage += (int)distanceTraveled; // Opdater kilometerstanden: Lav double om til int for at kunne lægge det til en int
+            Console.WriteLine($"Ny kilometerstand: {carMileage}"); 
+            Console.WriteLine(string.Format("Brændstofudgifterne for {0} km er {1:C}", distanceTraveled, tripCost)); // String format. {1:C} formaterer tripCost som valuta
 
             Console.WriteLine($"\n{"Bilmærke".PadRight(15)}|{"Model".PadRight(15)}|{"Årgang".PadRight(7)}|{"Kilometertal".PadLeft(12)}");
             Console.WriteLine("".PadRight(52, '-')); // 52 bindestreger
-            Console.WriteLine($"{carBrand.PadRight(15)}|{carModel,-15}|{(carManufactoredYear.ToString()).PadRight(7)}|{(carMileage.ToString()).PadLeft(7)} km"); //Stringpadding på forskellige måder
+            Console.WriteLine($"{carBrand.PadRight(15)}|{carModel,-15}|{(carManufactoredYear.ToString()).PadRight(7)}|{(carMileage.ToString()).PadLeft(7)} km");
+            //Stringpadding på forskellige måder. Et negativt tal betyder venstrestillet
         }
     }
 }
