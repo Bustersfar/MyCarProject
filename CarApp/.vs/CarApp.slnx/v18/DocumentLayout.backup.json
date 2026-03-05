@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Henrik\\Datamatiker\\Projects\\MyCarProject\\CarApp\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{666E1D56-F21C-2DEF-624A-6C8713B49DEE}|CarApp\\CarApp.csproj|c:\\users\\henrik\\datamatiker\\projects\\mycarproject\\carapp\\carapp\\car.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{666E1D56-F21C-2DEF-624A-6C8713B49DEE}|CarApp\\CarApp.csproj|solutionrelative:carapp\\car.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{666E1D56-F21C-2DEF-624A-6C8713B49DEE}|CarApp\\CarApp.csproj|c:\\users\\henrik\\datamatiker\\projects\\mycarproject\\carapp\\carapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{666E1D56-F21C-2DEF-624A-6C8713B49DEE}|CarApp\\CarApp.csproj|solutionrelative:carapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{666E1D56-F21C-2DEF-624A-6C8713B49DEE}|CarApp\\CarApp.csproj|c:\\users\\henrik\\datamatiker\\projects\\mycarproject\\carapp\\carapp\\trip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{666E1D56-F21C-2DEF-624A-6C8713B49DEE}|CarApp\\CarApp.csproj|solutionrelative:carapp\\trip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{666E1D56-F21C-2DEF-624A-6C8713B49DEE}|CarApp\\CarApp.csproj|c:\\users\\henrik\\datamatiker\\projects\\mycarproject\\carapp\\carapp\\fueltype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{666E1D56-F21C-2DEF-624A-6C8713B49DEE}|CarApp\\CarApp.csproj|solutionrelative:carapp\\fueltype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +31,54 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Car.cs",
+              "DocumentMoniker": "C:\\Users\\Henrik\\Datamatiker\\Projects\\MyCarProject\\CarApp\\CarApp\\Car.cs",
+              "RelativeDocumentMoniker": "CarApp\\Car.cs",
+              "ToolTip": "C:\\Users\\Henrik\\Datamatiker\\Projects\\MyCarProject\\CarApp\\CarApp\\Car.cs",
+              "RelativeToolTip": "CarApp\\Car.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAADgv0AAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T08:58:19.423Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Trip.cs",
+              "DocumentMoniker": "C:\\Users\\Henrik\\Datamatiker\\Projects\\MyCarProject\\CarApp\\CarApp\\Trip.cs",
+              "RelativeDocumentMoniker": "CarApp\\Trip.cs",
+              "ToolTip": "C:\\Users\\Henrik\\Datamatiker\\Projects\\MyCarProject\\CarApp\\CarApp\\Trip.cs",
+              "RelativeToolTip": "CarApp\\Trip.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAowBwAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T10:19:40.894Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FuelType.cs",
+              "DocumentMoniker": "C:\\Users\\Henrik\\Datamatiker\\Projects\\MyCarProject\\CarApp\\CarApp\\FuelType.cs",
+              "RelativeDocumentMoniker": "CarApp\\FuelType.cs",
+              "ToolTip": "C:\\Users\\Henrik\\Datamatiker\\Projects\\MyCarProject\\CarApp\\CarApp\\FuelType.cs",
+              "RelativeToolTip": "CarApp\\FuelType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T09:01:44.101Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Henrik\\Datamatiker\\Projects\\MyCarProject\\CarApp\\CarApp\\Program.cs",
               "RelativeDocumentMoniker": "CarApp\\Program.cs",
               "ToolTip": "C:\\Users\\Henrik\\Datamatiker\\Projects\\MyCarProject\\CarApp\\CarApp\\Program.cs",
               "RelativeToolTip": "CarApp\\Program.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAgwHMAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAASwB8AAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-12T09:36:38.425Z",
+              "WhenOpened": "2026-02-19T15:11:12.718Z",
               "EditorCaption": ""
             }
           ]
