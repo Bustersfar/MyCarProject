@@ -1,12 +1,13 @@
 ﻿
+using Microsoft.VisualBasic.FileIO;
 using System.ComponentModel.DataAnnotations;
 using System.Reflection;
-using Microsoft.VisualBasic.FileIO;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace CarApp
 
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
@@ -39,8 +40,13 @@ namespace CarApp
 
 			List<Trip> carTrips = new List<Trip>();
 
+			DateTime date = DateTime.Now;
 
-			carTrips = myCar.GetTrips();
+			myCar.GetTripsByDate(DateOnly.FromDateTime(date));
+
+
+
+            carTrips = myCar.GetTrips();
             foreach (var trip in carTrips) {
 				Console.WriteLine("Bilen har kørt " + trip.Distance +" km. Turen varede " + trip.CalculateDuration().Hours + " timer og " + trip.CalculateDuration().Minutes + " minutter");
 				Console.WriteLine("Brændstofforbruget for turen var " + trip.CalculateFuelUsed() + " liter, og turen kostede " + trip.CalculateTripCost(13.49) + " kr.\n");

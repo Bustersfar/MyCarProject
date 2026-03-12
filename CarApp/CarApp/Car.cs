@@ -69,68 +69,32 @@ namespace CarApp
         public void Drive(Trip newTrip)
 
         {
-
             if (newTrip.Car == this)
-
             {
-
                 _odometer += (int)newTrip.Distance;
-
                 _trips.Add(newTrip);
-
             }
-
             else
-
             {
-
                 Console.WriteLine("Fejl: Denne tur tilhører ikke denne bil.");
-
             }
+        }
+
+        public List<Trip> GetTripsByDate(DateOnly date)
+        {
+            DateTime dateAsDateTime = new DateTime(date, new TimeOnly(0,0));
+            
+            List<Trip> dateList = new List<Trip>();
+            foreach (Trip trip in _trips)
+            {
+                if (trip.TripDate.Date == dateAsDateTime.Date)
+                {
+                    dateList.Add(trip);
+                } 
+            }
+            return dateList;
 
         }
-        
-
-
-        /*void ReadCarDetails()
-		{
-			Console.Clear(); //Ryder skærmen og sætter markør op i venstre hjørne
-			Console.WriteLine("Indtast bilmærke");
-			carBrand = Console.ReadLine();
-			Console.WriteLine("Indtast bilmodel: ");
-			carModel = Console.ReadLine();
-			Console.WriteLine("Indtast Kilometerstand");
-			kmTal = Convert.ToInt32(Console.ReadLine());
-		}
-
-
-
-		static void CalculateTripPrice()
-		{
-			Console.WriteLine("Beregn turens pris");
-
-		}
-
-		//Metode 1: ligger udenfor Main scope/enten før eller efter Main scope  
-		void ReadCarDetails()
-		{
-			Console.Clear(); //Ryder skærmen og sætter markør op i venstre hjørne
-			Console.WriteLine("Indtast bilmærke");
-			carBrand = Console.ReadLine();
-			Console.WriteLine("Indtast bilmodel: ");
-			carModel = Console.ReadLine();
-			Console.WriteLine("Indtast Kilometerstand");
-			kmTal = Convert.ToInt32(Console.ReadLine());
-		}
-
-		static void CalculateTripPrice()
-		{
-			Console.WriteLine("Beregn turens pris");
-
-
-		}
-		*/
-
 
     }
 }
