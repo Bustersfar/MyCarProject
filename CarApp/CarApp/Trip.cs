@@ -30,7 +30,7 @@ namespace CarApp
             TimeSpan duration = _endTime - _startTime;
             return duration;
         }
-            public double CalculateFuelUsed() {
+            /*public double CalculateFuelUsed() {
                 double fuelUsed = _distance / _car.KmPerLiter;
                 return fuelUsed;
             }
@@ -39,7 +39,7 @@ namespace CarApp
                 double fuelUsed = CalculateFuelUsed();
                 double tripCost = fuelUsed * literPrice;
                 return tripCost;
-        }
+        }*/
     }
     
 }

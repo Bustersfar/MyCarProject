@@ -6,52 +6,54 @@ namespace CarApp
 {
     using System;
 
-    public class Car
+    abstract public class Car
     {
-        private string _brand; // implementeret attributter
+        /*private string _brand; // implementeret attributter
         private string _model;
         private int _year;
         private string _licensePlate;
         private enum _fuelType;
         private int _odometer = 0;
         private bool _isEngineOn = false;
-        private double _kmPerLiter;
+        // private double _kmPerLiter;*/
         private List<Trip> _trips = new List<Trip>();
 
-        public string Brand { get { return _brand; } } // oprettet get (uden set) metoder - gør det muligt at hente og ( set ville opdatere)  bilens oplysninger uden at man kan ændre den direkte
+        public string Brand { get; private set; }
 
-        public string Model { get { return _model; } }
+        public string Model { get; private set; }
 
-        public int Year { get { return _year; } }
+        public int Year { get; private set; }
 
-        public string LicensePlate { get { return _licensePlate; } }
+        public string LicensePlate { get; private set; }
 
-        public int Odometer { get { return _odometer; } }
+        public string RegistrationNumber { get; private set; }
 
-        public bool IsEngineOn { get { return _isEngineOn; } }
+        public int Odometer { get; protected set; }
 
-        public double KmPerLiter { get { return _kmPerLiter; } }
-
-        public FuelType FuelType { get; private set; }
-
+        private bool IsEngineOn = false;
+        public double Price { get; private set; }
 
 
-        public Car(string Brand, string Model, int Year, string LicensePlate, FuelType fuelType, double KmPerLiter) //konstruktør
+
+
+
+
+
+        public Car(string brand, string model, int year, string licensePlate, double price)
         {
-            _brand = Brand; //hører sammen med konstruktør 
-            _model = Model;
-            _year = Year;
-            _licensePlate = LicensePlate;
-            FuelType = fuelType;
-            _kmPerLiter = KmPerLiter;
+            Brand = brand;
+            Model = model;
+            Year = year;
+            LicensePlate = licensePlate;
+            RegistrationNumber = licensePlate;
+            Price = price;
         }
-        //metoderne starter her: 
 
         public void TurnOnEngine()
         {
-            if (!_isEngineOn)
+            if (!IsEngineOn)
             {
-                _isEngineOn = true;
+                IsEngineOn = true;
                 Console.WriteLine("Motoren er startet.");
             }
             else
@@ -64,15 +66,14 @@ namespace CarApp
             return _trips;
         }
 
-        //drive metode: 
-
-        public void Drive(Trip newTrip)
+        public void Drive(Trip trip)
 
         {
-            if (newTrip.Car == this)
+            if (trip.Car == this)
             {
-                _odometer += (int)newTrip.Distance;
-                _trips.Add(newTrip);
+                Odometer += (int)trip.Distance;
+                UpdateEnergyLevel(trip.Distance);
+                _trips.Add(trip);
             }
             else
             {
@@ -95,6 +96,12 @@ namespace CarApp
             return dateList;
 
         }
+
+        public string GetCarDetails() {
+            return ($"{Year} {Brand} {Model} [{LicensePlate}]");
+        }
+
+        public abstract void UpdateEnergyLevel(double km);
 
     }
 }
