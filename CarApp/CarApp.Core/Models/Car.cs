@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CarApp
+namespace CarApp.Core.Models
 {
     using System;
 
@@ -18,26 +18,20 @@ namespace CarApp
         // private double _kmPerLiter;*/
         private List<Trip> _trips = new List<Trip>();
 
-        public string Brand { get; private set; }
+        public string Brand { get; set; }
 
-        public string Model { get; private set; }
+        public string Model { get; set; }
 
-        public int Year { get; private set; }
+        public int Year { get; set; }
 
-        public string LicensePlate { get; private set; }
+        public string LicensePlate { get; set; }
 
-        public string RegistrationNumber { get; private set; }
+        public double Price { get; set; }
 
-        public int Odometer { get; protected set; }
+        public int Odometer { get; set; }
 
         private bool IsEngineOn = false;
-        public double Price { get; private set; }
-
-
-
-
-
-
+        
 
         public Car(string brand, string model, int year, string licensePlate, double price)
         {
@@ -45,7 +39,6 @@ namespace CarApp
             Model = model;
             Year = year;
             LicensePlate = licensePlate;
-            RegistrationNumber = licensePlate;
             Price = price;
         }
 
@@ -98,11 +91,11 @@ namespace CarApp
         }
 
         public string GetCarDetails() {
-            return ($"{Year} {Brand} {Model} [{LicensePlate}]");
+            return ($"{Year} {Brand} {Model} [{LicensePlate}] {Price} kr.");
         }
 
         public abstract void UpdateEnergyLevel(double km);
-
+        public abstract override string ToString();
     }
 }
 

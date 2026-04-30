@@ -1,0 +1,2 @@
+ElectricCar,Tesla,Model 3,2023,CD67890,380000,75,6
+ElectricCar,Tesla,Model 3,2023,CD67890,380000,75,6

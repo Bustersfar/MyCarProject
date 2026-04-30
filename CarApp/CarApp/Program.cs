@@ -2,20 +2,79 @@
 using Microsoft.VisualBasic.FileIO;
 using System.ComponentModel.DataAnnotations;
 using System.Reflection;
+using System.Runtime.ConstrainedExecution;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+// Program.cs — CarApp.Console
+
+using CarApp.Core.Models;
+
+using CarApp.Core.Repositories;
 
 namespace CarApp
-
 {
     class Program
     {
         static void Main(string[] args)
         {
-            FuelCar fc = new FuelCar("Toyota", "Corolla", 2022, "AB12345", 50, 18, 45000); 
-            ElectricCar ec = new ElectricCar("Tesla", "Model 3", 2023, "CD67890", 75, 6.5, 380000);
-            House h = new House("Strandvejen 42, 2900 Hellerup", 1965, 4200000, "1234-AB");
+            // Program.cs — test af InMemoryCarRepository
+
+            // ICarRepository repo = new InMemoryCarRepository();
+            ICarRepository repo = new FileCarRepository("cars.txt");
+            repo.Add(new FuelCar("Toyota", "Corolla", 2022, "AB12345", 45000, 50, 18));
+
+            repo.Add(new ElectricCar("Tesla", "Model 3", 2023, "CD67890", 380000, 75, 6.5));
+
+
+            // Hent alle og udskriv
+
+            foreach (Car car in repo.GetAll())
+            {
+
+                Console.WriteLine($"{car.Brand} {car.Model} — {car.LicensePlate}");
+                Console.WriteLine(car.ToString());
+                if (car is FuelCar)
+                {
+                    FuelCar fuelCar = (FuelCar)car;
+                    Console.WriteLine(fuelCar.TankCapacity);
+                }
+            }
+
+            // Hent en specifik bil
+
+            Car found = repo.GetByLicensePlate("AB12345");
+
+            Console.WriteLine(found != null ? $"Fundet: {found.Brand}" : "Ikke fundet\n");
+
+            Console.WriteLine(found != null ? $"Fundet: {found.ToString()}" : "Ikke fundet");
+
+            found.Price = 25000;
+
+            repo.Update(found);
+
+            Console.WriteLine(found != null ? $"Fundet: {found.ToString()}" : "Ikke fundet");
+
+
+
+            // Slet en bil og verificer
+
+            repo.Delete("AB12345");
+
+            Console.WriteLine($"Antal biler: {repo.GetAll().Count()}"); // 1
+
+
+
+
+
+
+
+
+
+
+            /*House h = new House("Strandvejen 42, 2900 Hellerup", 1965, 4200000, "1234-AB");
             List<ISellable> forSale = new List<ISellable> { fc, ec, h };
-            List<IInsurable> insured = new List<IInsurable> { fc, ec, h };
+            List<IInsurable> insured = new List<IInsurable> { fc, ec, h};
+            fc.Price = -5;
+
 
 
             foreach (ISellable s in forSale) 
@@ -43,7 +102,7 @@ namespace CarApp
 
 
 
-            /*FuelCar fuelCar = new FuelCar("Toyota", "Corolla", 2020, "AB12345", 50.0, 18.0); ElectricCar electricCar = new ElectricCar("Tesla", "Model 3", 2022, "EL99999", 75.0, 6.5);
+            FuelCar fuelCar = new FuelCar("Toyota", "Corolla", 2020, "AB12345", 50.0, 18.0); ElectricCar electricCar = new ElectricCar("Tesla", "Model 3", 2022, "EL99999", 75.0, 6.5);
 
             fuelCar.TurnOnEngine();
             electricCar.TurnOnEngine();

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CarApp
+namespace CarApp.Core.Models
 {
     public class Trip
     {

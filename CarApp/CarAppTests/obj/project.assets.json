@@ -1078,11 +1078,24 @@
       "CarApp/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "CarApp.Core": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/CarApp.dll": {}
         },
         "runtime": {
           "bin/placeholder/CarApp.dll": {}
+        }
+      },
+      "CarApp.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/CarApp.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CarApp.Core.dll": {}
         }
       }
     }
@@ -2282,6 +2295,11 @@
       "type": "project",
       "path": "../CarApp/CarApp.csproj",
       "msbuildProject": "../CarApp/CarApp.csproj"
+    },
+    "CarApp.Core/1.0.0": {
+      "type": "project",
+      "path": "../CarApp.Core/CarApp.Core.csproj",
+      "msbuildProject": "../CarApp.Core/CarApp.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2320,6 +2338,7 @@
       },
       "frameworks": {
         "net10.0": {
+          "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {
             "C:\\Users\\Henrik\\Datamatiker\\Projects\\MyCarProject\\CarApp\\CarApp\\CarApp.csproj": {
@@ -2342,6 +2361,7 @@
     },
     "frameworks": {
       "net10.0": {
+        "framework": "net10.0",
         "targetAlias": "net10.0",
         "dependencies": {
           "MSTest": {
@@ -2365,7 +2385,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.202/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",
